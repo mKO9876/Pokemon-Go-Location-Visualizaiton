@@ -5,6 +5,11 @@
     src: url('./font/PressStart2P-Regular.ttf') format('truetype');
 }
 
+
+:root {
+    color-scheme: light;
+}
+
 body {
     letter-spacing: -0.011em;
 
@@ -135,7 +140,7 @@ input:focus {
     margin: 20px
 }
 
-#point_data{
+#point_data {
     position: absolute;
     padding: 10px;
     border-radius: 5px;
@@ -190,15 +195,45 @@ circle {
 
 
 @media screen and (min-width: 300px) and (max-width: 1083px) {
+
+    body{
+        font-size: 30px;
+    }
+    #nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 300px;
+    }
+
+    #nav h1 {
+        color: #FFCA02;
+        padding-left: 50px;
+
+        font-size: 60px;
+    }
+
+    #nav input {
+        height: 70px;
+        width: 80vw;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 20px;
+
+        box-shadow: 10px 5px 5px #2d5086;
+    }
+
     .okvir {
         display: grid;
-        height: auto; 
+        height: auto;
         gap: 20px;
         padding: 20px;
-        grid-template-columns: 1fr; 
-        
+        grid-template-columns: 1fr;
+
         /* Koristi 'auto' ili 'min-content' da izbjegneš fiksne px koji kvare layout */
-        grid-template-rows: 300px 700px auto; 
+        grid-template-rows: 300px 700px auto;
 
         grid-template-areas:
             "podaci"
