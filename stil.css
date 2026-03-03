@@ -5,11 +5,6 @@
     src: url('./font/PressStart2P-Regular.ttf') format('truetype');
 }
 
-/* 
-html {
-    overflow-y: hidden;
-} */
-
 body {
     letter-spacing: -0.011em;
 
@@ -126,7 +121,7 @@ input:focus {
     margin-inline: auto;
     width: fit-content;
     padding: 40px;
-    background-color: rgba(46, 46, 46, 0.5); 
+    background-color: rgba(46, 46, 46, 0.5);
     color: rgb(232, 231, 231);
     font-size: bold;
 }
@@ -137,13 +132,13 @@ input:focus {
     right: 0;
     display: flex;
     flex-direction: column;
-
+    margin: 20px
 }
 
 #point_data{
-    position: absolute; 
-    padding: 10px; 
-    border-radius: 5px; 
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
     pointer-events: none;
     font-size: 12px;
 }
@@ -177,8 +172,11 @@ input:focus {
 /* LINIJSKI GRAF */
 
 #linijski_graf {
-    grid-area: "graf";
+    grid-area: graf;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -188,4 +186,23 @@ circle {
 
 .voronoi {
     fill: transparent;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 1083px) {
+    .okvir {
+        display: grid;
+        height: auto; 
+        gap: 20px;
+        padding: 20px;
+        grid-template-columns: 1fr; 
+        
+        /* Koristi 'auto' ili 'min-content' da izbjegneš fiksne px koji kvare layout */
+        grid-template-rows: 300px 700px auto; 
+
+        grid-template-areas:
+            "podaci"
+            "mapa"
+            "graf";
+    }
 }
